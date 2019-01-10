@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Visitor listing</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">Lista gości</h1>
+        <div th:if="${result}" th:text="${result}" class="alert alert-primary" role="alert"></div>
+        <ol class="visitor-list" th:unless="${listing.visitors.isEmpty()}">
+            <li th:each="visitor : ${listing.visitors}">
+                <a th:href="@{'/visitor/' + ${visitor.id} + '/details'}" th:text="${visitor.firstName} + ' ' + ${visitor.lastName}"></a>
+            </li>
+        </ol>
+        <p class="no-content" th:if="${listing.visitors.isEmpty()}">Brak wpisów</p>
+        <a th:href="@{'/visitor/add'}" class="btn btn-primary add-visitor-button">Dodaj gościa</a>
+    </div>
+</div>
+</body>
+</html>

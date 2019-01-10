@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Visitor creation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">Dodaj gościa</h1>
+        <form class="form-group" action="#" th:action="@{/visitor/add}" method="POST">
+            <label for="firstName">Imię: </label><input class="form-control" type="text" id="firstName" name="firstName" />
+            <label for="lastName">Nazwisko: </label><input class="form-control" type="text" id="lastName" name="lastName" />
+            <input class="create-visitor-button btn btn-primary mt-3" type="submit" value="Dodaj" />
+        </form>
+        <a th:href="@{'/'}" class="listing-button btn btn-secondary">Listing gości</a>
+    </div>
+</div>
+</body>
+</html>

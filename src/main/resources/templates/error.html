@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">Błąd</h1>
+        <div th:text="${error}" class="alert alert-danger" role="alert"></div>
+        <a th:href="@{'/'}" class="listing-button btn btn-secondary mt-3">Listing gości</a>
+    </div>
+</div>
+</body>
+</html>

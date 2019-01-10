@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Visitor details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title" th:text="${visitor.firstName} + ' ' + ${visitor.lastName}">Imię i nazwisko</h1>
+        <p th:text="${visitor.description}">Opis</p>
+        <form action="#" th:action="@{'/visitor/' + ${visitor.id}} + '/delete'" method="POST">
+            <input class="delete-visitor-button btn btn-primary mt-2" type="submit" value="Usuń wpis" />
+        </form>
+        <a th:href="@{'/'}" class="listing-button btn btn-secondary mt-3">Listing gości</a>
+    </div>
+</div>
+</body>
+</html>
